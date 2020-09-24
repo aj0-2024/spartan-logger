@@ -1,4 +1,4 @@
-import { LogLevel } from './levels';
+import { LogLevel } from "./levels";
 
 export class Logger {
     private logLevel: LogLevel;
@@ -22,9 +22,9 @@ export class Logger {
     public debug() {
         return this.logLevel <= LogLevel.DEBUG
             ? this.bindToFunc({
-                  name: 'DEBUG',
+                  name: "DEBUG",
                   method: console.log,
-                  background: 'rgba(0,0,0,0.1)',
+                  background: "rgba(0,0,0,0.1)",
               })
             : this.doNothing;
     }
@@ -32,9 +32,9 @@ export class Logger {
     public info() {
         return this.logLevel <= LogLevel.INFO
             ? this.bindToFunc({
-                  name: 'INFO',
+                  name: "INFO",
                   method: console.log,
-                  background: 'rgba(0,0,0,0.1)',
+                  background: "rgba(0,0,0,0.1)",
               })
             : this.doNothing;
     }
@@ -42,9 +42,9 @@ export class Logger {
     public warn() {
         return this.logLevel <= LogLevel.WARN
             ? this.bindToFunc({
-                  name: 'INFO',
+                  name: "INFO",
                   method: console.log,
-                  background: '#FB8C00',
+                  background: "#FB8C00",
               })
             : this.doNothing;
     }
@@ -52,18 +52,18 @@ export class Logger {
     public error() {
         return this.logLevel <= LogLevel.ERROR
             ? this.bindToFunc({
-                  name: 'ERROR',
+                  name: "ERROR",
                   method: console.log,
-                  background: 'red',
+                  background: "red",
               })
             : this.doNothing;
     }
 
     public assert() {
         return this.bindToFunc({
-            name: 'ASSERT',
+            name: "ASSERT",
             method: console.assert,
-            background: 'red',
+            background: "red",
         });
     }
 
