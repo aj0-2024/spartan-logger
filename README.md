@@ -1,6 +1,6 @@
 # Minimalist Logger
 
-[![Actions Status](https://github.com/anirudh-janga/minimalist-logger/workflows/main/badge.svg)](https://github.com/anirudh-janga/minimalist-logger/actions)
+[![Actions Status](https://github.com/anirudh-janga/minimalist-logger/workflows/CI/badge.svg)](https://github.com/anirudh-janga/minimalist-logger/actions)
 
 This is a logger made for minimalists. Use this to solve your logging problems for your Javascript/Typescript projects.
 
