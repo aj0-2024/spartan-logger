@@ -19,7 +19,7 @@ export class Logger {
         // do not log
     }
 
-    public debug() {
+    public get debug() {
         return this.logLevel <= LogLevel.DEBUG
             ? this.bindToFunc({
                   name: "DEBUG",
@@ -29,7 +29,7 @@ export class Logger {
             : this.doNothing;
     }
 
-    public info() {
+    public get info() {
         return this.logLevel <= LogLevel.INFO
             ? this.bindToFunc({
                   name: "INFO",
@@ -39,7 +39,7 @@ export class Logger {
             : this.doNothing;
     }
 
-    public warn() {
+    public get warn() {
         return this.logLevel <= LogLevel.WARN
             ? this.bindToFunc({
                   name: "INFO",
@@ -49,7 +49,7 @@ export class Logger {
             : this.doNothing;
     }
 
-    public error() {
+    public get error() {
         return this.logLevel <= LogLevel.ERROR
             ? this.bindToFunc({
                   name: "ERROR",
@@ -59,7 +59,7 @@ export class Logger {
             : this.doNothing;
     }
 
-    public assert() {
+    public get assert() {
         return this.bindToFunc({
             name: "ASSERT",
             method: console.assert,
