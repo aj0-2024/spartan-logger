@@ -1,8 +1,7 @@
-# Minimalist Logger
+# Spartan Logger
+This logger is built for minimalists.
 
 [![Actions Status](https://github.com/anirudh-janga/minimalist-logger/workflows/CI/badge.svg)](https://github.com/anirudh-janga/minimalist-logger/actions)
-
-This logger is built for minimalists.
 
 # Features
 
