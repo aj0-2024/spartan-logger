@@ -25,7 +25,8 @@ describe("Should not log after setting SILENT", () => {
     it("Should not be log after SILENT", () => {
         // Try and see if there is console output
         logger.setLevel(LogLevel.SILENT);
+        consoleOutput = [];
         logger.info("This should not be printed");
-        expect(consoleOutput).toBe([]);
+        expect(consoleOutput.length).toBe(0);
     });
 });

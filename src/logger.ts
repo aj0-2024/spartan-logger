@@ -42,7 +42,7 @@ export class Logger {
     public get warn() {
         return this.logLevel <= LogLevel.WARN
             ? this.bindToFunc({
-                  name: "INFO",
+                  name: "WARN",
                   method: console.log,
                   background: "#FB8C00",
               })
@@ -57,14 +57,6 @@ export class Logger {
                   background: "red",
               })
             : this.doNothing;
-    }
-
-    public get assert() {
-        return this.bindToFunc({
-            name: "ASSERT",
-            method: console.assert,
-            background: "red",
-        });
     }
 
     private bindToFunc(config: {
