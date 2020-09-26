@@ -31,16 +31,16 @@
     "singleQuote": false,
     "trailingComma": "es5"
   },
-  "name": "minimalist-logger",
+  "name": "spartan-logger",
   "author": "Anirudh Janga",
-  "module": "dist/minimalist-logger.esm.js",
+  "module": "dist/spartan-logger.esm.js",
   "size-limit": [
     {
-      "path": "dist/minimalist-logger.cjs.production.min.js",
+      "path": "dist/spartan-logger.cjs.production.min.js",
       "limit": "10 KB"
     },
     {
-      "path": "dist/minimalist-logger.esm.js",
+      "path": "dist/spartan-logger.esm.js",
       "limit": "10 KB"
     }
   ],
