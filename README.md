@@ -11,7 +11,7 @@ Works great with React/Angular projects
 
 # Usage
 
-`
+```
 import { createLogger } from "spartan-logger";
 
 logger = createLogger();
@@ -19,5 +19,5 @@ logger = createLogger();
 logger.debug("This is a DEBUG message");
 logger.info("Hello, World!");
 logger.error("This is an error message");
-`
+```
 
