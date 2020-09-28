@@ -11,13 +11,26 @@ Works great with React/Angular projects
 
 # Usage
 
+## Create a new logger
+
 ```
 import { createLogger } from "spartan-logger";
 
 logger = createLogger();
+```
 
+## Use the logger to log with various levels
+
+```
 logger.debug("This is a DEBUG message");
 logger.info("Hello, World!");
 logger.error("This is an error message");
+```
+
+### Change to SILENT when in production
+
+```
+import { createLogger, LogLevel } from "spartan-logger";
+logger.setLevel(LogLevel.SILENT);
 ```
 
