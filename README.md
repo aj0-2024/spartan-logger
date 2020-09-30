@@ -4,14 +4,16 @@ This logger is built for minimalists.
 [![Actions Status](https://github.com/anirudh-janga/minimalist-logger/workflows/CI/badge.svg)](https://github.com/anirudh-janga/minimalist-logger/actions)
 
 # Features
-Works great with React/Angular projects
+ - Works great with React/Angular/Vue projects. 
+ - Works with any Javascript or Typescript applications.
+ - Only 558 Bytes
 
 1. Switch to different logging levels - INFO, DEBUG, WARN, SILENT
 2. Turn off all logs for production builds using SILENT level
 
 # Usage
 
-## Create a new logger
+## Creating a new logger
 
 ```
 import { createLogger } from "spartan-logger";
@@ -19,7 +21,14 @@ import { createLogger } from "spartan-logger";
 logger = createLogger();
 ```
 
+## Logger Levels
+```
+DEBUG < INFO < WARN < ERROR < SILENT
+```
+
 ## Use the logger to log with various levels
+
+The default logger level is `INFO`
 
 ```
 logger.debug("This is a DEBUG message");
@@ -31,6 +40,11 @@ logger.error("This is an error message");
 
 ```
 import { createLogger, LogLevel } from "spartan-logger";
-logger.setLevel(LogLevel.SILENT);
+
+const logger = createLogger();
+
+if (process.env.NODE_ENV === 'production') {
+    logger.setLevel(LogLevel.SILENT);
+}
 ```
 
