@@ -1,16 +1,16 @@
 import { createLogger, LogLevel } from "../";
 
 describe("Logger Tests", () => {
-    it("Should create Logger successfuly with DEBUG level", () => {
+    it("Should create Logger successfuly with INFO level", () => {
         const logger = createLogger();
-        expect(logger.getLevel()).toBe(LogLevel.DEBUG);
+        expect(logger.getLevel()).toBe(LogLevel.INFO);
     });
 
     it("Should change the logger level", () => {
         const logger = createLogger();
-        logger.setLevel(LogLevel.INFO);
+        logger.setLevel(LogLevel.WARN);
         logger.info("Hello world!");
-        expect(logger.getLevel()).toBe(LogLevel.INFO);
+        expect(logger.getLevel()).toBe(LogLevel.WARN);
     });
 });
 
