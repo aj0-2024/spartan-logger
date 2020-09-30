@@ -6,7 +6,7 @@ This logger is built for minimalists.
 # Features
  - Works great with React/Angular/Vue projects. 
  - Works with any Javascript or Typescript applications.
- - Only 645 Bytes (0 dependencies, minified & gzipped)
+ - Only `645 Bytes` (0 dependencies, minified & gzipped)
 
 1. Switch to different logging levels - INFO, DEBUG, WARN, SILENT
 2. Turn off all logs for production builds using SILENT level
