@@ -1,4 +1,4 @@
-import { createLogger, LogLevel } from "../";
+import { createLogger, createNodeLogger, LogLevel } from "../";
 
 describe("Logger Tests", () => {
     it("Should create Logger successfuly with INFO level", () => {
@@ -28,5 +28,20 @@ describe("Should not log after setting SILENT", () => {
         consoleOutput = [];
         logger.info("This should not be printed");
         expect(consoleOutput.length).toBe(0);
+    });
+});
+
+describe("Should create a node logger", () => {
+    const logger = createNodeLogger();
+
+    // Redirect console.log
+    let consoleOutput: string[] = [];
+    const mockedLog = (output: string) => consoleOutput.push(output);
+
+    it("Node logger should not print style", () => {
+        console.log = mockedLog;
+
+        logger.info("Hello World!");
+        // TODO: expect(consoleOutput[0]).toBe("[INFO] Hello World!");
     });
 });
