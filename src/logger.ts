@@ -1,10 +1,13 @@
 import { LogLevel } from "./levels";
+import { LogMode } from "./logMode";
 
 export class Logger {
     private logLevel: LogLevel;
+    private mode: LogMode;
 
-    constructor(logLevel: LogLevel) {
+    constructor(logLevel: LogLevel, mode: LogMode) {
         this.logLevel = logLevel;
+        this.mode = mode;
     }
 
     public getLevel() {
@@ -43,7 +46,7 @@ export class Logger {
         return this.logLevel <= LogLevel.WARN
             ? this.bindToFunc({
                   name: "WARN",
-                  method: console.log,
+                  method: console.warn,
                   background: "#FB8C00",
               })
             : this.doNothing;
@@ -53,7 +56,7 @@ export class Logger {
         return this.logLevel <= LogLevel.ERROR
             ? this.bindToFunc({
                   name: "ERROR",
-                  method: console.log,
+                  method: console.error,
                   background: "red",
               })
             : this.doNothing;
@@ -64,11 +67,22 @@ export class Logger {
         method: any;
         background: string;
     }) {
+        const methodName =
+            this.mode === LogMode.WEB
+                ? `%c${config.name}%c`
+                : `[${config.name}]`;
+
+        const style =
+            this.mode === LogMode.WEB
+                ? `font-size:10px;background:${config.background};color:white;padding:3px 6px`
+                : ``;
+
         return Function.prototype.bind.call(
             config.method,
             console,
-            `%c${config.name}%c`,
-            `font-size:10px;background:${config.background};color:white;padding:3px 6px`
+            methodName,
+            style,
+            ""
         );
     }
 }

@@ -1,5 +1,5 @@
 {
-  "version": "1.0.3",
+  "version": "1.0.4",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -52,5 +52,21 @@
     "tsdx": "^0.14.0",
     "tslib": "^2.0.1",
     "typescript": "^4.0.3"
+  },
+  "keywords": [
+    "Logger",
+    "Minimalist",
+    "Tiny",
+    "Javascript",
+    "Typescript",
+    "React",
+    "Angular",
+    "Vue",
+    "Web",
+    "Node"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/anirudh-janga/spartan-logger"
   }
 }
