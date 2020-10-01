@@ -1,6 +1,6 @@
 import { createLogger, createNodeLogger, LogLevel } from "../";
 
-describe("Logger Tests", () => {
+describe("Logger Levels Tests", () => {
     it("Should create Logger successfuly with INFO level", () => {
         const logger = createLogger();
         expect(logger.getLevel()).toBe(LogLevel.INFO);
@@ -15,33 +15,26 @@ describe("Logger Tests", () => {
 });
 
 describe("Should not log after setting SILENT", () => {
-    const logger = createLogger();
-
-    // Redirect console.log
-    let consoleOutput: string[] = [];
-    const mockedLog = (output: string) => consoleOutput.push(output);
-    console.log = mockedLog;
-
     it("Should not be log after SILENT", () => {
-        // Try and see if there is console output
+        const logger = createLogger();
         logger.setLevel(LogLevel.SILENT);
-        consoleOutput = [];
+
+        // redirect console.log
+        const mockLog = jest.fn(console.log);
+        console.log = mockLog;
+
         logger.info("This should not be printed");
-        expect(consoleOutput.length).toBe(0);
+        expect(mockLog.mock.calls.length).toBe(0);
     });
 });
 
 describe("Should create a node logger", () => {
-    const logger = createNodeLogger();
-
-    // Redirect console.log
-    let consoleOutput: string[] = [];
-    const mockedLog = (output: string) => consoleOutput.push(output);
-
     it("Node logger should not print style", () => {
-        console.log = mockedLog;
+        const logger = createNodeLogger();
+        const mockLog = jest.fn(console.log);
+        console.log = mockLog;
 
         logger.info("Hello World!");
-        // TODO: expect(consoleOutput[0]).toBe("[INFO] Hello World!");
+        expect(mockLog.mock.calls[0]).toEqual(["[INFO]", "", "Hello World!"]);
     });
 });
