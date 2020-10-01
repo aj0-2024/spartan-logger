@@ -35,6 +35,11 @@ describe("Should create a node logger", () => {
         console.log = mockLog;
 
         logger.info("Hello World!");
-        expect(mockLog.mock.calls[0]).toEqual(["[INFO]", "", "Hello World!"]);
+        expect(mockLog.mock.calls[0]).toEqual([
+            "[INFO]",
+            "",
+            "",
+            "Hello World!",
+        ]);
     });
 });
