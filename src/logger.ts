@@ -46,7 +46,7 @@ export class Logger {
         return this.logLevel <= LogLevel.WARN
             ? this.bindToFunc({
                   name: "WARN",
-                  method: console.log,
+                  method: console.warn,
                   background: "#FB8C00",
               })
             : this.doNothing;
@@ -56,7 +56,7 @@ export class Logger {
         return this.logLevel <= LogLevel.ERROR
             ? this.bindToFunc({
                   name: "ERROR",
-                  method: console.log,
+                  method: console.error,
                   background: "red",
               })
             : this.doNothing;
@@ -81,7 +81,8 @@ export class Logger {
             config.method,
             console,
             methodName,
-            style
+            style,
+            ""
         );
     }
 }
