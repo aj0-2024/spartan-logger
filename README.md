@@ -49,8 +49,21 @@ logger = createNodeLogger();
 
 ## Logger Levels
 
+### Logger Level Heirarchy
+
+- Setting a higher level will hide the lower level logs
 ```
 DEBUG < INFO < WARN < ERROR < SILENT
+```
+
+### Setting a Logger Level
+
+```
+import { createLogger, LogLevel } from "spartan-logger";
+
+const logger = createLogger();
+logger.setLevel(LogLevel.WARN);
+logger.setLevel(LogLevel.DEBUG);
 ```
 
 ## Use the logger to log with various levels
